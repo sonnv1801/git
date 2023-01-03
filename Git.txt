@@ -1,0 +1,192 @@
+- git init                           : khởi tạo guit ở local
+- git add `Tênfile`                  : add 1 file
+- git add .                          : add tất cả các file
+- git commit -m "nội dung commit"    : commit những file đã add
+- git branch -M main                 : create nhánh chính
+- git branch `tên branch`            : create 1 nhánh
+- git branch                         : hiển thị tất cả các nhánh đang có
+- git remote add origin `link`       : kết nối 2 rep
+- git checkout `tên nhánh`           : chuyển sang nhánh
+- git push -u origin "tên nhánh"     : đẩy tất cả các commit lên trên nhánh
+- git pull                           : kéo thay đổi về
+- git status                         : xem trạng thái các file đã commit hay chư
+- git log                            : xem lịch sử log
+- git tag 'v1.0.0'                   : tạo tab phiên bản release
+- git push --tags                    : push tab lên
+- git merge `tên nhánh`              : merge 2 nhánh
+- git branch -d `tên nhánh`          : xoá nhánh ở local
+- git push origin -d `tên nhánh`     : xoá nhánh ở remote
+
+
+* Lệnh tương tác với nhánh tính năng:
+- git checkout -b `tên tính năng` `tên nhánh trên` : tạo 1 và chuyển sáng nhánh xây dựng tính năng trên 1 nằm trên nhánh phát triển
++ ví dụ: git checkout -b feature/1-add-cart.js-file develop
+- git commit -m '#(phải khớp với số # công việc) và nội dung tính năng'  : commit 
++ ví dụ: git commit -m '#1 - truong add file cart.js'
+- khi đang đứng ở nhánh tính năng t có thể sử dụng : git push --set-upstream origin feature/1-add-cart.js-file
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/////  History 
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\Users\Admin\Desktop\TestGit> echo "# Test-git" >> README.md
+PS C:\Users\Admin\Desktop\TestGit> git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/TestGit/.git/
+PS C:\Users\Admin\Desktop\TestGit> git add .
+PS C:\Users\Admin\Desktop\TestGit> git commit -m "first commit"
+[master (root-commit) 58fc5a0] first commit
+ 1 file changed, 12 insertions(+)
+ create mode 100644 Test1.html
+PS C:\Users\Admin\Desktop\TestGit> git branch -M  main
+ *  History restored 
+
+
+PS C:\Users\Admin\Desktop\TestGit> git init
+Initialized empty Git repository in C:/Users/Admin/Desktop/TestGit/.git/
+PS C:\Users\Admin\Desktop\TestGit> add .
++ add .
++ ~~~
+    + CategoryInfo          : ObjectNotFound: (add:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\Admin\Desktop\TestGit> git add .
+PS C:\Users\Admin\Desktop\TestGit> git commit -m "first commit"
+ create mode 100644 Test1.txt
+PS C:\Users\Admin\Desktop\TestGit> git branch -M main 
+PS C:\Users\Admin\Desktop\TestGit> git push -u origin main
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 235 bytes | 117.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/truong0707/Test-git.git
+branch 'main' set up to track 'origin/main'.
+PS C:\Users\Admin\Desktop\TestGit> git branch develop
+  develop
+* main
+Switched to branch 'develop'
+PS C:\Users\Admin\Desktop\TestGit> git statuws
+git: 'statuws' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+PS C:\Users\Admin\Desktop\TestGit> git status
+On branch develop
+PS C:\Users\Admin\Desktop\TestGit> git checkout main
+Your branch is up to date with 'origin/main'.
+remote:
+remote: Create a pull request for 'develop' on GitHub by visiting:
+remote:      https://github.com/truong0707/Test-git/pull/new/develop
+remote:
+To https://github.com/truong0707/Test-git.git
+branch 'develop' set up to track 'origin/develop'.
+PS C:\Users\Admin\Desktop\TestGit> git checkout-b feature/1-add-cart.js-file develop  
+git: 'checkout-b' is not a git command. See 'git --help'.
+Switched to a new branch 'feature/1-add-cart.js-file'
+PS C:\Users\Admin\Desktop\TestGit> git add .
+PS C:\Users\Admin\Desktop\TestGit> git status
+On branch feature/1-add-cart.js-file
+Changes to be committed:
+        new file:   Cart.js
+
+PS C:\Users\Admin\Desktop\TestGit> git commit -m "#1 add Cart.js file"
+[feature/1-add-cart.js-file d2e6fdd] #1 add Cart.js file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cart.js
+PS C:\Users\Admin\Desktop\TestGit> git push
+fatal: The current branch feature/1-add-cart.js-file has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature/1-add-cart.js-file
+
+PS C:\Users\Admin\Desktop\TestGit> git push --set-upstream origin feature/1-add-cart.js-file
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Writing objects: 100% (3/3), 306 bytes | 153.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'feature/1-add-cart.js-file' on GitHub by visiting:
+remote:      https://github.com/truong0707/Test-git/pull/new/feature/1-add-cart.js-file
+remote:
+To https://github.com/truong0707/Test-git.git
+ * [new branch]      feature/1-add-cart.js-file -> feature/1-add-cart.js-file
+branch 'feature/1-add-cart.js-file' set up to track 'origin/feature/1-add-cart.js-file'.
+PS C:\Users\Admin\Desktop\TestGit> git checkout develop
+Switched to branch 'develop'
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+Unpacking objects: 100% (1/1), 640 bytes | 80.00 KiB/s, done.npacking objects: 100% (1/1)
+
+From https://github.com/truong0707/Test-git
+Updating 2d57f65..d9f9515
+Fast-forward
+ Cart.js | 1 +
+ create mode 100644 Cart.js
+PS C:\Users\Admin\Desktop\TestGit> git checkout release-1.0.0 develop
+error: pathspec 'release-1.0.0' did not match any file(s) known to git
+error: pathspec 'develop' did not match any file(s) known to git
+PS C:\Users\Admin\Desktop\TestGit> git checkout -b release-1.0.0 develop
+PS C:\Users\Admin\Desktop\TestGit>  git tab 'v1.0.0'
+git: 'tab' is not a git command. See 'git --help'.
+
+The most similar command is
+        tag
+PS C:\Users\Admin\Desktop\TestGit> git tag 'v1.0.0'
+PS C:\Users\Admin\Desktop\TestGit> git push tag
+fatal: 'tag' does not appear to be a git repository
+
+Please make sure you have the correct access rights
+PS C:\Users\Admin\Desktop\TestGit> git push --tags
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/truong0707/Test-git.git
+ * [new tag]         v1.0.0 -> v1.0.0
+fatal: The current branch release-1.0.0 has no upstream branch.
+
+    git push --set-upstream origin release-1.0.0
+
+PS C:\Users\Admin\Desktop\TestGit> git push --set-upstream origin release-1.0.0
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'release-1.0.0' on GitHub by visiting:
+remote:      https://github.com/truong0707/Test-git/pull/new/release-1.0.0
+remote:
+To https://github.com/truong0707/Test-git.git
+ * [new branch]      release-1.0.0 -> release-1.0.0
+branch 'release-1.0.0' set up to track 'origin/release-1.0.0'.
+PS C:\Users\Admin\Desktop\TestGit> git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+PS C:\Users\Admin\Desktop\TestGit> git pull\
+git: 'pull\' is not a git command. See 'git --help'.
+
+The most similar command is
+        pull
+PS C:\Users\Admin\Desktop\TestGit> git pull
+Already up to date.
+PS C:\Users\Admin\Desktop\TestGit> git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 626 bytes | 125.00 KiB/s, done.
+From https://github.com/truong0707/Test-git
+   2d57f65..9cf3df6  main       -> origin/main
+Updating 2d57f65..9cf3df6
+Fast-forward
+ Cart.js | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Cart.js
+PS C:\Users\Admin\Desktop\TestGit> 
